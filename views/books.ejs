@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main>
+        <div class="add-new-book">
+            <form method="GET" action="/books/new">
+                <button class="btn">Add a new book</button>
+            </form>
+        </div>
+        <% for(book of books) { %>
+            <div class="book-details">
+                <div class="title-author">
+                    <p><b><%= book.title %></b></p>
+                    <p><i><%= book.author %></i></p>
+                </div>
+                <div class="edit-delete">
+                    <form method="GET" action="/books/<%= book.id %>">
+                        <button class="btn">Edit</button>
+                    </form>
+                    <br>
+                    <form method="POST" action="/books/<%= book.id %>?_method=DELETE">
+                        <button class="btn">Delete</button>
+                    </form>
+                </div>
+            </div>
+        <% } %>
+    </main>
+</body>
+</html>

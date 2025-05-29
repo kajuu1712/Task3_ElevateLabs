@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New book</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+   <main>
+        <div class="new-book">
+            <form method="POST" action="/books">
+                <input type="text" name="book[title]" placeholder="Add title of the book">
+                <input type="text" name="book[author]" placeholder="Author name">
+                <button class="btn">Add</button>
+            </form>
+        </div>
+   </main>
+</body>
+</html>
